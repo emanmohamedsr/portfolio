@@ -1,5 +1,5 @@
 import { Navbar } from "@/shared/layout/Navbar";
-import { HeroSection } from "./components";
+import { AboutSection, HeroSection } from "./components";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const PortfilioPage = () => {
@@ -7,6 +7,7 @@ const PortfilioPage = () => {
 		<div>
 			<Navbar />
 			<HeroSection />
+			<AboutSection />
 			<BackgroundBeams />
 		</div>
 	);
