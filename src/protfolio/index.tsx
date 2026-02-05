@@ -1,11 +1,15 @@
 import { Navbar } from "@/shared/layout/Navbar";
+import { HeroSection } from "./components";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
-const PortfolioPage = () => {
+const PortfilioPage = () => {
 	return (
-		<>
+		<div>
 			<Navbar />
-		</>
+			<HeroSection />
+			<BackgroundBeams />
+		</div>
 	);
 };
 
-export default PortfolioPage;
+export default PortfilioPage;

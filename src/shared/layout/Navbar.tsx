@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
 import { images } from "../assets";
 import { TextAlignJustify, X } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 
 const navLinks = [
 	{ name: "About", href: "#about" },
@@ -39,7 +40,7 @@ export const Navbar = () => {
 					"bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-lg"
 				:	"bg-transparent border-transparent",
 			)}>
-			<div className='bg-background max-w-7xl mx-auto flex justify-between items-center'>
+			<div className='max-w-7xl mx-auto flex justify-between items-center'>
 				{/* --- Logo Section --- */}
 				<a href='#' className='flex items-center justify-start '>
 					<img
@@ -90,8 +91,36 @@ export const Navbar = () => {
 						initial={{ opacity: 0, height: 0 }}
 						animate={{ opacity: 1, height: "auto" }}
 						exit={{ opacity: 0, height: 0 }}
-						className='md:hidden max-[530px]:w-screen max-[530px]:-ml-6 bg-slate-950/95 backdrop-blur-xl overflow-hidden'>
-						<ul className='flex flex-col items-center gap-6 py-8'>
+						className='md:hidden mt-2 rounded-md  bg-slate-950/95 backdrop-blur-xl overflow-hidden'>
+						<div className='relative h-full rounded-xl border p-2 md:rounded-3xl md:p-3'>
+							<GlowingEffect
+								borderWidth={4}
+								spread={40}
+								glow={true}
+								disabled={false}
+								proximity={64}
+								inactiveZone={0.01}
+							/>
+							<ul className='relative z-10 flex flex-col items-center gap-6 py-8 border-0.75 h-full justify-between overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]'>
+								{navLinks.map((link, index) => (
+									<li key={index}>
+										<a
+											href={link.href}
+											onClick={() => setIsOpen(false)}
+											className='text-lg text-slate-300 hover:text-cyan-400 transition-colors'>
+											<span className='text-cyan-500 mr-2'>0{index + 1}.</span>
+											{link.name}
+										</a>
+									</li>
+								))}
+								<a
+									href='/resume.pdf'
+									className='px-8 py-3 text-cyan-400 border border-cyan-500/30 rounded-md hover:bg-cyan-500/10 transition-all'>
+									Resume
+								</a>
+							</ul>
+						</div>
+						{/* <ul className='relative z-10 flex flex-col items-center gap-6 py-8'>
 							{navLinks.map((link, index) => (
 								<li key={index}>
 									<a
@@ -108,7 +137,7 @@ export const Navbar = () => {
 								className='px-8 py-3 text-cyan-400 border border-cyan-500/30 rounded-md hover:bg-cyan-500/10 transition-all'>
 								Resume
 							</a>
-						</ul>
+						</ul> */}
 					</motion.div>
 				)}
 			</AnimatePresence>
