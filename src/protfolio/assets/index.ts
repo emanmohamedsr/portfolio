@@ -1,11 +1,11 @@
-import iti from "./images/iti.png";
-import icpc from "./images/icpc.png";
-import gdg from "./images/gdg.png";
-import axon from "./images/axon.png";
-import ma7al from "./images/ma7al.png";
-import vscode from "./images/vscode.png";
-import ecommerce from "./images/ecommerce.png";
-import htmlDashboard from "./images/htmldashboard.png";
+import iti from "./images/iti.webp";
+import icpc from "./images/icpc.webp";
+import gdg from "./images/gdg.webp";
+import axon from "./images/axon.webp";
+import ma7al from "./images/ma7al.webp";
+import vscode from "./images/vscode.webp";
+import ecommerce from "./images/ecommerce.webp";
+import htmlDashboard from "./images/htmldashboard.webp";
 
 export const images = {
 	iti,

@@ -17,6 +17,7 @@ const ProjectVisual = ({
 		<div className='relative flex h-full w-full items-center justify-center overflow-hidden bg-slate-900 rounded-md border border-white/10 group'>
 			{/* Project Image */}
 			<img
+				loading='lazy'
 				src={src}
 				alt={alt}
 				className='h-full w-full object-cover transition-transform duration-500 lg:group-hover:scale-110 opacity-40 lg:opacity-80 lg:group-hover:opacity-40'
