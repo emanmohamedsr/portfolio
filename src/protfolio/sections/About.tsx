@@ -19,7 +19,7 @@ const AboutSection = () => {
 					variants={staggerContainer}
 					initial='hidden'
 					whileInView='visible'
-					viewport={{ amount: 0.3 }}
+					viewport={{ once: true, amount: 0.3 }}
 					className='flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-20'>
 					{/* --- 1. Text Section --- */}
 					<motion.div
