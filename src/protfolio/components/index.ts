@@ -1,2 +1,1 @@
-export { default as HeroSection } from "./HeroSection";
-export { default as AboutSection } from "./About";
+export { default as ExperienceCard } from "./ExperienceCard";
