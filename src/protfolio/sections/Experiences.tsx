@@ -1,6 +1,6 @@
 import data from "../data/experiences";
 import { Timeline } from "@/components/ui/timeline";
-import AnimatedHeader from "../components/AnimatedHeader";
+import { AnimatedHeader } from "../components";
 
 const ExperiencesSection = () => {
 	return (
