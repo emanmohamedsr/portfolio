@@ -2,7 +2,7 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { AnimatedHeader } from "../components";
 import work from "../data/work";
 
-const workSection = () => {
+const WorkSection = () => {
 	return (
 		<div
 			id='work'
@@ -19,4 +19,4 @@ const workSection = () => {
 	);
 };
 
-export default workSection;
+export default WorkSection;
