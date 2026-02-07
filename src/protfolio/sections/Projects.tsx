@@ -34,7 +34,7 @@ const ProjectsSection = () => {
 	);
 
 	return (
-		<div id='work' className='py-20 w-full relative bg-black/20'>
+		<div id='projects' className='py-20 w-full relative bg-black/20'>
 			<AnimatedHeader
 				header='My Work'
 				subtext='A showcase of my projects and professional work.'

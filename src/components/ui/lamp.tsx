@@ -13,7 +13,6 @@ export const LampContainer = ({
 	return (
 		<div
 			className={cn(
-				// التعديل الأول: قللنا الـ padding في الموبايل من 48 إلى 24 ليرتفع المحتوى
 				"relative flex min-h-screen flex-col items-center justify-center md:justify-start pt-24 md:pt-48 overflow-hidden bg-slate-950 w-full rounded-md z-0",
 				className,
 			)}>
