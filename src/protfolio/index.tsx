@@ -19,10 +19,10 @@ const PortfilioPage = () => {
 				<BackgroundBeams />
 			</div>
 			<AboutSection />
-			<EducationSection />
-			<ExperiencesSection />
 			<ProjectsSection />
 			<SkillsSection />
+			<ExperiencesSection />
+			<EducationSection />
 			<ContactSection />
 		</div>
 	);
