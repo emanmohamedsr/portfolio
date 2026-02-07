@@ -54,7 +54,7 @@ const AboutSection = () => {
 
 						<div className='flex justify-center md:justify-start gap-8 pt-4'>
 							<div>
-								<h4 className='text-2xl font-bold text-white'>2+</h4>
+								<p className='text-2xl font-bold text-white'>2+</p>
 								<p className='text-sm text-slate-500'>Years Exp.</p>
 							</div>
 							<div>

@@ -1,4 +1,4 @@
 export { default as ExperienceCard } from "./ExperienceCard";
 export { default as AnimatedHeader } from "./AnimatedHeader";
 export { default as SocialButton } from "./SocialButton";
-export { default as Preloader } from "./PreLoader";
+export { default as Preloader } from "./Preloader";
