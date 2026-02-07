@@ -124,7 +124,9 @@ export const Navbar = () => {
 				<div className='lg:hidden'>
 					<Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
 						<SheetTrigger asChild>
-							<button className='text-slate-300 hover:text-cyan-400 transition p-2'>
+							<button
+								aria-label='Open navigation menu'
+								className='text-slate-300 hover:text-cyan-400 transition p-2'>
 								<Menu className='w-8 h-8' />
 							</button>
 						</SheetTrigger>
