@@ -20,7 +20,7 @@ const PortfolioPage = () => {
 				<BackgroundBeams />
 			</div>
 
-			<div className='relative z-10 flex flex-col gap-10 md:gap-20'>
+			<div className='relative z-0 flex flex-col gap-10 md:gap-20'>
 				<Suspense fallback={<SectionLoader />}>
 					<About />
 				</Suspense>

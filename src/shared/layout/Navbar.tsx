@@ -88,7 +88,7 @@ export const Navbar = () => {
 			animate={{ y: 0, opacity: 1 }}
 			transition={{ duration: 0.8, delay: 0.5 }}
 			className={cn(
-				"top-0 w-full z-100 transition-all duration-300 ease-in-out px-6 py-4",
+				"top-0 w-full z-900 transition-all duration-300 ease-in-out px-6 py-4",
 				scrolled ?
 					"bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-lg"
 				:	"bg-transparent border-transparent",
