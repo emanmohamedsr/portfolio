@@ -5,10 +5,10 @@ import {
 	ExperiencesSection,
 	HeroSection,
 	SkillsSection,
-	WorkSection,
+	ProjectsSection,
+	ContactSection,
 } from "./sections";
 import { BackgroundBeams } from "@/components/ui/background-beams";
-import { ContactSection } from "./sections";
 
 const PortfilioPage = () => {
 	return (
@@ -21,7 +21,7 @@ const PortfilioPage = () => {
 			<AboutSection />
 			<EducationSection />
 			<ExperiencesSection />
-			<WorkSection />
+			<ProjectsSection />
 			<SkillsSection />
 			<ContactSection />
 		</div>
