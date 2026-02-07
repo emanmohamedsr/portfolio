@@ -1,48 +1,101 @@
+"use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "../../lib/utils";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 import { images } from "../assets";
-import { TextAlignJustify, X } from "lucide-react";
-import { GlowingEffect } from "@/components/ui/glowing-effect";
+import { Menu, Eye, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+import {
+	Sheet,
+	SheetContent,
+	SheetDescription,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
 	{ name: "About", href: "#about" },
 	{ name: "Experience", href: "#experience" },
+	{ name: "Education", href: "#education" },
 	{ name: "Work", href: "#work" },
+	{ name: "Teck Stack", href: "#skills" },
 	{ name: "Contact", href: "#contact" },
 ];
 
+const ResumeActionMenu = () => {
+	return (
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
+				<Button className='cursor-pointer bg-slate-900 text-white border border-slate-800 hover:bg-slate-800 hover:text-cyan-400 transition-colors px-6 rounded-full'>
+					Resume
+				</Button>
+			</DropdownMenuTrigger>
+			<DropdownMenuContent
+				align='end'
+				className='w-48 bg-slate-900 border-white/10 text-slate-200 z-200'>
+				<DropdownMenuItem
+					asChild
+					className='focus:bg-cyan-500/10 focus:text-cyan-400 cursor-pointer'>
+					<a
+						href='/resume.pdf'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='flex items-center gap-2'>
+						<Eye size={16} />
+						<span>Preview in Browser</span>
+					</a>
+				</DropdownMenuItem>
+				<DropdownMenuItem
+					asChild
+					className='focus:bg-cyan-500/10 focus:text-cyan-400 cursor-pointer'>
+					<a
+						href='/resume.pdf'
+						download='Eman_Soliman_CV.pdf'
+						className='flex items-center gap-2'>
+						<Download size={16} />
+						<span>Download PDF</span>
+					</a>
+				</DropdownMenuItem>
+			</DropdownMenuContent>
+		</DropdownMenu>
+	);
+};
+
 export const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
-	const [isOpen, setIsOpen] = useState(false);
+	const [sheetOpen, setSheetOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			if (window.scrollY > 50) {
-				setScrolled(true);
-			} else {
-				setScrolled(false);
-			}
+			setScrolled(window.scrollY > 50);
 		};
-
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	return (
 		<motion.nav
+			style={{ position: "fixed" }}
 			initial={{ y: -100, opacity: 0 }}
 			animate={{ y: 0, opacity: 1 }}
 			transition={{ duration: 0.8, delay: 0.5 }}
 			className={cn(
-				"fixed top-0 w-full z-100 transition-all duration-300 ease-in-out px-6 py-4",
+				"top-0 w-full z-100 transition-all duration-300 ease-in-out px-6 py-4",
 				scrolled ?
 					"bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-lg"
 				:	"bg-transparent border-transparent",
 			)}>
 			<div className='max-w-7xl mx-auto flex justify-between items-center'>
-				{/* --- Logo Section --- */}
-				<a href='#' className='flex items-center justify-start '>
+				{/* Logo */}
+				<a href='#' className='flex items-center justify-start'>
 					<img
 						src={images.logo}
 						alt='Logo'
@@ -51,7 +104,7 @@ export const Navbar = () => {
 				</a>
 
 				{/* --- Desktop Menu --- */}
-				<div className='hidden md:flex items-center gap-8'>
+				<div className='hidden lg:flex items-center gap-8'>
 					<ul className='flex gap-8'>
 						{navLinks.map((link, index) => (
 							<li key={index}>
@@ -64,83 +117,90 @@ export const Navbar = () => {
 							</li>
 						))}
 					</ul>
-
-					{/* Resume Button */}
-					<a
-						href='/resume.pdf'
-						target='_blank'
-						className='px-5 py-2 text-sm font-medium text-cyan-400 border border-cyan-500/30 rounded-md hover:bg-cyan-500/10 transition-all duration-300'>
-						Resume
-					</a>
+					<ResumeActionMenu />
 				</div>
 
-				{/* --- Mobile Menu Toggle --- */}
-				<button
-					className='md:hidden text-slate-300 hover:text-cyan-400 transition'
-					onClick={() => setIsOpen(!isOpen)}>
-					{isOpen ?
-						<X className='mr-2' size={23} />
-					:	<TextAlignJustify className='mr-4' size={23} />}
-				</button>
-			</div>
+				{/* --- Mobile Menu  --- */}
+				<div className='lg:hidden'>
+					<Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
+						<SheetTrigger asChild>
+							<button className='text-slate-300 hover:text-cyan-400 transition p-2'>
+								<Menu className='w-8 h-8' />
+							</button>
+						</SheetTrigger>
 
-			{/* --- Mobile Menu Dropdown --- */}
-			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						initial={{ opacity: 0, height: 0 }}
-						animate={{ opacity: 1, height: "auto" }}
-						exit={{ opacity: 0, height: 0 }}
-						className='md:hidden mt-2 rounded-md  bg-slate-950/95 backdrop-blur-xl overflow-hidden'>
-						<div className='relative h-full rounded-xl border p-2 md:rounded-3xl md:p-3'>
-							<GlowingEffect
-								borderWidth={4}
-								spread={40}
-								glow={true}
-								disabled={false}
-								proximity={64}
-								inactiveZone={0.01}
-							/>
-							<ul className='relative z-10 flex flex-col items-center gap-6 py-8 border-0.75 h-full justify-between overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]'>
-								{navLinks.map((link, index) => (
-									<li key={index}>
+						<SheetContent
+							side='right'
+							className='
+                z-150               
+                w-[80vw]              
+                max-w-87.5      
+                bg-slate-950/95      
+                backdrop-blur-xl 
+                border-l border-white/10 
+                p-6                
+                pt-12          
+              '>
+							<SheetHeader className='mb-8 flex justify-center items-center gap-4'>
+								<SheetTitle>
+									<img
+										src={images.logo}
+										alt='Logo'
+										className='w-8 h-8 object-contain'
+									/>
+								</SheetTitle>
+								<SheetDescription className='text-left text-sm text-slate-500'>
+									Explore the sections and options
+								</SheetDescription>
+							</SheetHeader>
+
+							<div className='flex flex-col h-full gap-8'>
+								{/* Links */}
+								<ul className='flex flex-col gap-6'>
+									{navLinks.map((link, index) => (
+										<li key={index}>
+											<a
+												href={link.href}
+												onClick={() => setSheetOpen(false)} // يقفل المنيو لما تضغطي
+												className='text-lg font-medium text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-4 group'>
+												<span className='text-cyan-500/50 text-sm font-mono group-hover:text-cyan-400 transition-colors'>
+													0{index + 1}.
+												</span>
+												{link.name}
+											</a>
+										</li>
+									))}
+								</ul>
+
+								{/* Resume Options for Mobile */}
+								<div className='mt-auto mb-6 border-t border-white/10 pt-6'>
+									<p className='text-slate-500 text-xs mb-4 uppercase tracking-widest font-bold'>
+										Resume Options
+									</p>
+									<div className='flex flex-col gap-3'>
 										<a
-											href={link.href}
-											onClick={() => setIsOpen(false)}
-											className='text-lg text-slate-300 hover:text-cyan-400 transition-colors'>
-											<span className='text-cyan-500 mr-2'>0{index + 1}.</span>
-											{link.name}
+											href='/resume.pdf'
+											target='_blank'
+											onClick={() => setSheetOpen(false)}
+											className='flex items-center gap-3 px-4 py-3 rounded-xl bg-slate-900 border border-white/10 text-slate-300 hover:bg-slate-800 hover:text-cyan-400 transition-all active:scale-95'>
+											<Eye size={18} className='text-cyan-500' />
+											<span className='text-sm font-medium'>Preview PDF</span>
 										</a>
-									</li>
-								))}
-								<a
-									href='/resume.pdf'
-									className='px-8 py-3 text-cyan-400 border border-cyan-500/30 rounded-md hover:bg-cyan-500/10 transition-all'>
-									Resume
-								</a>
-							</ul>
-						</div>
-						{/* <ul className='relative z-10 flex flex-col items-center gap-6 py-8'>
-							{navLinks.map((link, index) => (
-								<li key={index}>
-									<a
-										href={link.href}
-										onClick={() => setIsOpen(false)}
-										className='text-lg text-slate-300 hover:text-cyan-400 transition-colors'>
-										<span className='text-cyan-500 mr-2'>0{index + 1}.</span>
-										{link.name}
-									</a>
-								</li>
-							))}
-							<a
-								href='/resume.pdf'
-								className='px-8 py-3 text-cyan-400 border border-cyan-500/30 rounded-md hover:bg-cyan-500/10 transition-all'>
-								Resume
-							</a>
-						</ul> */}
-					</motion.div>
-				)}
-			</AnimatePresence>
+										<a
+											href='/resume.pdf'
+											download='Eman_Soliman_CV.pdf'
+											onClick={() => setSheetOpen(false)}
+											className='flex items-center gap-3 px-4 py-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 hover:bg-cyan-500/20 transition-all active:scale-95'>
+											<Download size={18} />
+											<span className='text-sm font-medium'>Download File</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</SheetContent>
+					</Sheet>
+				</div>
+			</div>
 		</motion.nav>
 	);
 };

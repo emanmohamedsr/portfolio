@@ -1,11 +1,14 @@
 import { Navbar } from "@/shared/layout/Navbar";
 import {
 	AboutSection,
+	EducationSection,
 	ExperiencesSection,
 	HeroSection,
+	SkillsSection,
 	WorkSection,
 } from "./sections";
 import { BackgroundBeams } from "@/components/ui/background-beams";
+import { ContactSection } from "./sections";
 
 const PortfilioPage = () => {
 	return (
@@ -16,8 +19,11 @@ const PortfilioPage = () => {
 				<BackgroundBeams />
 			</div>
 			<AboutSection />
+			<EducationSection />
 			<ExperiencesSection />
 			<WorkSection />
+			<SkillsSection />
+			<ContactSection />
 		</div>
 	);
 };
