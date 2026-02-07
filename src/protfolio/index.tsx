@@ -12,7 +12,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 
 const PortfilioPage = () => {
 	return (
-		<div>
+		<>
 			<div>
 				<Navbar />
 				<HeroSection />
@@ -24,7 +24,7 @@ const PortfilioPage = () => {
 			<ExperiencesSection />
 			<EducationSection />
 			<ContactSection />
-		</div>
+		</>
 	);
 };
 
