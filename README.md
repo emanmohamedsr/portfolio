@@ -1,4 +1,4 @@
-# <img src="public/logo.png" alt="Eman" width="60" style="vertical-align: middle;"/> Eman Soliman \| Creative Developer Portfolio
+# <img src="public/logo.webp" alt="Eman" width="60" style="vertical-align: middle;"/> Eman Soliman \| Creative Developer Portfolio
 
 ![Portfolio Preview](public/hero.png)
 

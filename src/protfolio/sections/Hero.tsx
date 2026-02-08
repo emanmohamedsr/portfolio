@@ -16,7 +16,7 @@ export default function Hero() {
 					}}
 					className='flex flex-col items-center'>
 					<h1
-						className='font-script mt-20 md:mt-0 bg-linear-to-br from-white to-cyan-400 bg-clip-text text-transparent text-center font-bold tracking-tight 
+						className='font-script pt-20 md:pt-0 mt-20 md:mt-0 bg-linear-to-br from-white to-cyan-400 bg-clip-text text-transparent text-center font-bold tracking-tight 
             text-[clamp(2.5rem,6vw,4.5rem)] leading-tight'>
 						Building Exceptional <br /> Digital Experiences
 					</h1>
