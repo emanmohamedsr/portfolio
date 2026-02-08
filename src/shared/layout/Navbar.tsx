@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { images } from "../assets";
 import { Menu, Eye, Download } from "lucide-react";
@@ -82,13 +81,10 @@ export const Navbar = () => {
 	}, []);
 
 	return (
-		<motion.nav
+		<nav
 			style={{ position: "fixed" }}
-			initial={{ y: -100, opacity: 0 }}
-			animate={{ y: 0, opacity: 1 }}
-			transition={{ duration: 0.8, delay: 0.5 }}
 			className={cn(
-				"top-0 w-full z-900 transition-all duration-300 ease-in-out px-6 py-4",
+				"top-0 w-full z-999 transition-all duration-300 ease-in-out px-6 py-4", // زودت z-[999] عشان تضمني انها فوق العناصر التانية
 				scrolled ?
 					"bg-slate-950/80 backdrop-blur-md border-b border-slate-800/50 shadow-lg"
 				:	"bg-transparent border-transparent",
@@ -134,10 +130,10 @@ export const Navbar = () => {
 						<SheetContent
 							side='right'
 							className='
-                z-150               
+                z-1000               
                 w-[80vw]              
-                max-w-87.5      
-                bg-slate-950/95      
+                max-w-87.5       
+                bg-slate-950/95       
                 backdrop-blur-xl 
                 border-l border-white/10 
                 p-6                
@@ -163,7 +159,7 @@ export const Navbar = () => {
 										<li key={index}>
 											<a
 												href={link.href}
-												onClick={() => setSheetOpen(false)} // يقفل المنيو لما تضغطي
+												onClick={() => setSheetOpen(false)}
 												className='text-lg font-medium text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-4 group'>
 												<span className='text-cyan-500/50 text-sm font-mono group-hover:text-cyan-400 transition-colors'>
 													0{index + 1}.
@@ -203,6 +199,6 @@ export const Navbar = () => {
 					</Sheet>
 				</div>
 			</div>
-		</motion.nav>
+		</nav>
 	);
 };

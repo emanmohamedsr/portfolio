@@ -26,8 +26,11 @@ const Education = () => {
 					<div className='relative z-10 flex flex-col md:flex-row gap-8 items-start'>
 						{/* 1. Logo / Icon Box */}
 						<div className='w-16 h-16 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center shrink-0'>
-							{/* ممكن تحطي لوجو الكلية هنا لو عندك صورة، أو تسيبي الأيقونة دي */}
-							<img src={images.university} alt='Zagazig University' />
+							<img
+								src={images.university}
+								className='w-full h-auto object-contain'
+								alt='Zagazig University'
+							/>
 						</div>
 
 						{/* 2. Content */}

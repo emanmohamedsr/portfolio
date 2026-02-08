@@ -1,4 +1,3 @@
-import { LinkPreview } from "@/components/ui/link-preview";
 import { Calendar, MapPin, Briefcase } from "lucide-react";
 
 const ExperienceCard = ({
@@ -27,7 +26,7 @@ const ExperienceCard = ({
 			{/* Header: Logo & Titles */}
 			<div className='flex flex-col sm:flex-row items-start gap-4'>
 				{logo && (
-					<LinkPreview url={certificateUrl || "#"}>
+					<a href={certificateUrl} target='_blank' rel='noopener noreferrer'>
 						<div className='w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-lg bg-white/5 p-2 border border-white/10 flex items-center justify-center overflow-hidden'>
 							<img
 								src={logo}
@@ -35,7 +34,7 @@ const ExperienceCard = ({
 								className='w-full h-full object-contain'
 							/>
 						</div>
-					</LinkPreview>
+					</a>
 				)}
 				<div className='flex-1'>
 					<h3 className='text-lg md:text-xl font-bold text-white'>{role}</h3>
