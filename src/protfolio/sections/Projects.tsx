@@ -6,9 +6,8 @@ import { ExternalLink, Github, X } from "lucide-react";
 import projects from "../data/projects";
 
 const ProjectsSection = () => {
-	const [active, setActive] = useState<(typeof projects)[0] | boolean | null>(
-		null,
-	);
+	type Project = (typeof projects)[0];
+	const [active, setActive] = useState<Project | null>(null);
 	const ref = useRef<HTMLDivElement>(null);
 	const id = useId();
 
@@ -16,11 +15,11 @@ const ProjectsSection = () => {
 	useEffect(() => {
 		function onKeyDown(event: KeyboardEvent) {
 			if (event.key === "Escape") {
-				setActive(false);
+				setActive(null);
 			}
 		}
-		if (active && typeof active === "object") {
-			document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+		if (active) {
+			document.body.style.overflow = "hidden";
 		} else {
 			document.body.style.overflow = "auto";
 		}
@@ -28,7 +27,6 @@ const ProjectsSection = () => {
 		return () => window.removeEventListener("keydown", onKeyDown);
 	}, [active]);
 
-	// Close on click outside
 	useOutsideClick(ref as React.RefObject<HTMLDivElement>, () =>
 		setActive(null),
 	);
@@ -41,9 +39,9 @@ const ProjectsSection = () => {
 				highlight='Work'
 			/>
 
-			{/* --- 1. Overlay (Backdrop) --- */}
+			{/* --- 1. Overlay --- */}
 			<AnimatePresence>
-				{active && typeof active === "object" && (
+				{active && (
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
@@ -55,23 +53,24 @@ const ProjectsSection = () => {
 
 			{/* --- 2. Expanded Card (Modal) --- */}
 			<AnimatePresence>
-				{active && typeof active === "object" ?
-					<div className='fixed inset-0 grid place-items-center z-120 p-4'>
+				{active ?
+					<div className='fixed inset-0 grid place-items-center z-120 p-4 pointer-events-none'>
 						<motion.button
 							key={`button-${active.title}-${id}`}
 							layout
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0, transition: { duration: 0.05 } }}
-							className='flex absolute top-4 right-4 lg:hidden items-center justify-center bg-white rounded-full h-8 w-8 z-130'
-							onClick={() => setActive(null)}>
+							className='flex absolute top-4 right-4 lg:hidden items-center justify-center bg-white rounded-full h-8 w-8 z-130 pointer-events-auto cursor-pointer'
+							onClick={() => setActive(null)}
+							aria-label='Close details'>
 							<X className='text-black' size={18} />
 						</motion.button>
 
 						<motion.div
 							layoutId={`card-${active.title}-${id}`}
 							ref={ref}
-							className='w-full max-w-150 h-fit max-h-[90vh] flex flex-col bg-slate-900 border border-white/10 sm:rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(6,182,212,0.15)]'>
+							className='w-full max-w-lg h-fit max-h-[90vh] flex flex-col bg-slate-900 border border-white/10 sm:rounded-3xl overflow-hidden shadow-2xl pointer-events-auto'>
 							{/* Image Area */}
 							<motion.div
 								layoutId={`image-${active.title}-${id}`}
@@ -81,8 +80,7 @@ const ProjectsSection = () => {
 									alt={active.title}
 									className='w-full h-full object-cover'
 								/>
-								{/* Gradient Overlay for text readability if needed */}
-								<div className='absolute inset-0 bg-linear-to-t from-slate-900 to-transparent opacity-60' />
+								<div className='absolute inset-0 bg-linear-to-t from-slate-900 via-transparent to-transparent opacity-60' />
 							</motion.div>
 
 							<div className='p-6 flex flex-col h-full overflow-y-auto custom-scrollbar'>
@@ -102,22 +100,26 @@ const ProjectsSection = () => {
 
 									{/* Desktop Actions */}
 									<div className='hidden md:flex gap-2'>
-										<a
-											aria-label='Project live demo'
-											href={active.demoUrl}
-											target='_blank'
-											rel='noreferrer'
-											className='px-4 py-2 text-sm rounded-full font-bold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors flex items-center gap-2'>
-											<ExternalLink size={16} /> Live Demo
-										</a>
-										<a
-											aria-label='View project code on GitHub'
-											href={active.repoUrl}
-											target='_blank'
-											rel='noreferrer'
-											className='px-3 py-2 rounded-full bg-slate-800 text-white border border-white/10 hover:bg-slate-700 transition-colors'>
-											<Github size={18} />
-										</a>
+										{active.demoUrl && (
+											<a
+												href={active.demoUrl}
+												target='_blank'
+												rel='noreferrer'
+												aria-label={`Live demo of ${active.title}`}
+												className='px-4 py-2 text-sm rounded-full font-bold bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors flex items-center gap-2'>
+												<ExternalLink size={16} /> Live Demo
+											</a>
+										)}
+										{active.repoUrl && (
+											<a
+												href={active.repoUrl}
+												target='_blank'
+												rel='noreferrer'
+												aria-label={`GitHub repo of ${active.title}`}
+												className='px-3 py-2 rounded-full bg-slate-800 text-white border border-white/10 hover:bg-slate-700 transition-colors'>
+												<Github size={18} />
+											</a>
+										)}
 									</div>
 								</div>
 
@@ -129,7 +131,6 @@ const ProjectsSection = () => {
 									className='text-slate-400 text-sm leading-relaxed'>
 									<p className='mb-6'>{active.longDescription}</p>
 
-									{/* Tech Stack Chips */}
 									<div className='mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider'>
 										Tech Stack
 									</div>
@@ -145,20 +146,26 @@ const ProjectsSection = () => {
 
 									{/* Mobile Actions Footer */}
 									<div className='flex md:hidden gap-4 mt-auto'>
-										<a
-											aria-label='Project live demo'
-											href={active.demoUrl}
-											target='_blank'
-											className='flex-1 bg-cyan-500 text-slate-900 py-3 rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2'>
-											<ExternalLink size={16} /> Live Demo
-										</a>
-										<a
-											aria-label='View project code on GitHub'
-											href={active.repoUrl}
-											target='_blank'
-											className='flex-1 bg-slate-800 text-white py-3 rounded-xl text-center font-bold text-sm border border-white/10 flex items-center justify-center gap-2'>
-											<Github size={18} /> Code
-										</a>
+										{active.demoUrl && (
+											<a
+												href={active.demoUrl}
+												target='_blank'
+												rel='noreferrer'
+												aria-label='Live Demo'
+												className='flex-1 bg-cyan-500 text-slate-900 py-3 rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2'>
+												<ExternalLink size={16} /> Live Demo
+											</a>
+										)}
+										{active.repoUrl && (
+											<a
+												href={active.repoUrl}
+												target='_blank'
+												rel='noreferrer'
+												aria-label='View Code'
+												className='flex-1 bg-slate-800 text-white py-3 rounded-xl text-center font-bold text-sm border border-white/10 flex items-center justify-center gap-2'>
+												<Github size={18} /> Code
+											</a>
+										)}
 									</div>
 								</motion.div>
 							</div>
@@ -172,11 +179,13 @@ const ProjectsSection = () => {
 				<ul className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 					{projects.map((project) => (
 						<li key={project.title}>
-							<motion.div
+							<motion.button
 								layoutId={`card-${project.title}-${id}`}
 								onClick={() => setActive(project)}
-								className='group p-4 flex flex-col bg-slate-900/40 hover:bg-slate-900/80 border border-white/5 hover:border-cyan-500/30 rounded-3xl cursor-pointer transition-all duration-300'>
-								<div className='flex gap-4 flex-col w-full h-full'>
+								className='group p-4 flex flex-col bg-slate-900/40 hover:bg-slate-900/80 border border-white/5 hover:border-cyan-500/30 rounded-3xl cursor-pointer transition-all duration-300 w-full text-left'
+								aria-label={`View details for ${project.title}`}
+								type='button'>
+								<div className='flex gap-4 flex-col w-full h-full pointer-events-none'>
 									{/* Thumbnail */}
 									<motion.div
 										layoutId={`image-${project.title}-${id}`}
@@ -192,7 +201,7 @@ const ProjectsSection = () => {
 									<div className='flex flex-col justify-between grow mt-2'>
 										<div>
 											<div className='flex items-center gap-2 mb-2'>
-												{project.icon}
+												<div className='text-cyan-400'>{project.icon}</div>
 												<motion.h3
 													layoutId={`title-${project.title}-${id}`}
 													className='font-bold text-slate-100 text-lg group-hover:text-cyan-400 transition-colors'>
@@ -206,7 +215,7 @@ const ProjectsSection = () => {
 											</motion.p>
 										</div>
 
-										<div className='mt-4 pt-4 border-t border-white/5 flex items-center justify-between'>
+										<div className='mt-4 pt-4 border-t border-white/5 flex items-center justify-between w-full'>
 											<span className='text-xs text-slate-400'>
 												{project.stack.length} Technologies
 											</span>
@@ -216,7 +225,7 @@ const ProjectsSection = () => {
 										</div>
 									</div>
 								</div>
-							</motion.div>
+							</motion.button>
 						</li>
 					))}
 				</ul>
