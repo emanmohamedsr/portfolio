@@ -1,5 +1,6 @@
-import { Layers, ShoppingBag, Code, Box, Layout } from "lucide-react";
+import { Layers, ShoppingBag, Code, Layout, Gamepad2 } from "lucide-react";
 import { images } from "../assets";
+
 export default [
 	{
 		title: "Axon",
@@ -15,6 +16,8 @@ export default [
 		stack: [
 			"React.js",
 			"TypeScript",
+			"Tailwind CSS",
+			"React Query",
 			"Zustand",
 			"Leaflet",
 			"Vercel AI",
@@ -42,12 +45,32 @@ export default [
 		],
 	},
 	{
+		title: "Game Hub",
+		subtitle: "Video Game Discovery App",
+		description:
+			"A responsive game discovery platform with real-time search and filtering.",
+		longDescription:
+			"A feature-rich application fetching data from the RAWG API. It implements advanced caching and state management using TanStack Query and Zustand. Features include game filtering by genre/platform, sorting, and infinite scrolling for a seamless user experience.",
+		src: images.gamehub,
+		icon: <Gamepad2 className='text-yellow-400' size={24} />,
+		repoUrl: "https://github.com/emanmohamedsr/game-hub",
+		demoUrl: "https://game-hub-two-sandy.vercel.app/",
+		stack: [
+			"React 19",
+			"TypeScript",
+			"React Query",
+			"Zustand",
+			"Chakra UI",
+			"Axios",
+		],
+	},
+	{
 		title: "VSCode Clone",
 		subtitle: "High-Fidelity Web IDE",
 		description:
 			"Replicates core functionality including file exploration and syntax highlighting.",
 		longDescription:
-			"Built with React and Vite. replicates core functionality including file exploration, syntax highlighting, and the command palette. Focuses on performance and complex UI component architecture.",
+			"Built with React and Vite. Replicates core functionality including file exploration, syntax highlighting, and the command palette. Focuses on performance and complex UI component architecture.",
 		src: images.vscode,
 		icon: <Code className='text-blue-400' size={24} />,
 		repoUrl: "https://github.com/emanmohamedsr/vscode",
@@ -58,25 +81,7 @@ export default [
 			"Vite",
 			"Tailwind CSS",
 			"React Resize Panel",
-		],
-	},
-	{
-		title: "Product Dashboard",
-		subtitle: "E-Commerce Inventory Manager",
-		description:
-			"Streamlined CRUD operations for products with category attributes.",
-		longDescription:
-			"Facilitates full CRUD operations for products with category and color attributes. Built with Headless UI for accessible components and React Hot Toast for real-time feedback.",
-		src: images.ecommerce,
-		icon: <Box className='text-orange-400' size={24} />,
-		repoUrl: "https://github.com/emanmohamedsr/CURD_ECommerce",
-		demoUrl: "https://curd-e-commerce.vercel.app/",
-		stack: [
-			"React.js",
-			"TypeScript",
-			"Tailwind CSS",
-			"Headless UI",
-			"Hot Toast",
+			"React Syntax Highlighter",
 		],
 	},
 	{
