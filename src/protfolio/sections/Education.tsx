@@ -78,7 +78,9 @@ const Education = () => {
 										<p className='text-xs text-slate-500 uppercase font-bold'>
 											Major
 										</p>
-										<p className='text-white font-medium'>Computer Science</p>
+										<p className='text-white font-medium'>
+											Information Technology IT
+										</p>
 									</div>
 								</div>
 							</div>

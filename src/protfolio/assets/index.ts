@@ -7,6 +7,7 @@ import vscode from "./images/vscode.webp";
 import ecommerce from "./images/ecommerce.webp";
 import htmlDashboard from "./images/htmldashboard.webp";
 import university from "./images/university.webp";
+import logocard from "./images/logocard.webp";
 
 export const images = {
 	iti,
@@ -18,4 +19,5 @@ export const images = {
 	ecommerce,
 	htmlDashboard,
 	university,
+	logocard,
 };

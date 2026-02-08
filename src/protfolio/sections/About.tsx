@@ -1,5 +1,6 @@
 import { CometCard } from "@/components/ui/comet-card";
 import { motion } from "framer-motion";
+import { images } from "../assets";
 
 const staggerContainer = {
 	hidden: { opacity: 0 },
@@ -92,7 +93,7 @@ const AboutSection = () => {
 											loading='lazy'
 											className='absolute inset-0 h-full w-full object-contain p-4'
 											alt='Eman Soliman Logo'
-											src='/logo.webp'
+											src={images.logocard}
 											style={{
 												filter:
 													"drop-shadow(0px 0px 10px rgba(34, 211, 238, 0.3))",

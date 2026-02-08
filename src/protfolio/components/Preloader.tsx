@@ -10,9 +10,16 @@ import { useState } from "react";
 
 export default function Preloader() {
 	const [isOpen, setIsOpen] = useState(true);
+	const [isMounted, setIsMounted] = useState(true);
 
-	const handleClose = () => setIsOpen(false);
+	const handleClose = () => {
+		setIsOpen(false);
+		setTimeout(() => setIsMounted(false), 500);
+	};
+
 	const handleVideoEnd = () => setTimeout(handleClose, 500);
+
+	if (!isMounted) return null;
 
 	return (
 		<Sheet defaultOpen={true} open={isOpen} onOpenChange={handleClose}>
