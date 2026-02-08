@@ -31,6 +31,6 @@ export default [
 	{
 		category: "Embedded & Mobile",
 		icon: <Terminal className='w-6 h-6 text-green-400' />,
-		skills: ["Arduino", "Embedded C", "Flutter (Basics)", "Dart"],
+		skills: ["Arduino", "Flutter (Basics)", "Dart"],
 	},
 ];
