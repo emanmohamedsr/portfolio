@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { images } from "../assets";
 import { Menu, Eye, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -44,6 +43,7 @@ const ResumeActionMenu = () => {
 					asChild
 					className='focus:bg-cyan-500/10 focus:text-cyan-400 cursor-pointer'>
 					<a
+						aria-label='Resume preview'
 						href='/resume.pdf'
 						target='_blank'
 						rel='noopener noreferrer'
@@ -56,6 +56,7 @@ const ResumeActionMenu = () => {
 					asChild
 					className='focus:bg-cyan-500/10 focus:text-cyan-400 cursor-pointer'>
 					<a
+						aria-label='Resume download'
 						href='/resume.pdf'
 						download='Eman_Soliman_CV.pdf'
 						className='flex items-center gap-2'>
@@ -91,9 +92,12 @@ export const Navbar = () => {
 			)}>
 			<div className='max-w-7xl mx-auto flex justify-between items-center'>
 				{/* Logo */}
-				<a href='#' className='flex items-center justify-start'>
+				<a
+					href='#'
+					aria-label='Eman Soliman Portfolio Home'
+					className='flex items-center justify-start'>
 					<img
-						src={images.logo}
+						src='/logo.webp'
 						alt='Logo'
 						className='w-10 h-10 xs:w-12 xs:h-12 md:w-18 md:h-18 object-contain'
 					/>
@@ -105,6 +109,7 @@ export const Navbar = () => {
 						{navLinks.map((link, index) => (
 							<li key={index}>
 								<a
+									aria-label={`Navigate to ${link.name} section`}
 									href={link.href}
 									className='relative text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-300'>
 									<span className='mr-1 text-cyan-500/80'>0{index + 1}.</span>
@@ -142,7 +147,7 @@ export const Navbar = () => {
 							<SheetHeader className='mb-8 flex justify-center items-center gap-4'>
 								<SheetTitle>
 									<img
-										src={images.logo}
+										src='/logo.webp'
 										alt='Logo'
 										className='w-8 h-8 object-contain'
 									/>
@@ -158,6 +163,7 @@ export const Navbar = () => {
 									{navLinks.map((link, index) => (
 										<li key={index}>
 											<a
+												aria-label={`Navigate to ${link.name} section`}
 												href={link.href}
 												onClick={() => setSheetOpen(false)}
 												className='text-lg font-medium text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-4 group'>
@@ -177,6 +183,7 @@ export const Navbar = () => {
 									</p>
 									<div className='flex flex-col gap-3'>
 										<a
+											aria-label='Resume preview'
 											href='/resume.pdf'
 											target='_blank'
 											onClick={() => setSheetOpen(false)}
@@ -185,6 +192,7 @@ export const Navbar = () => {
 											<span className='text-sm font-medium'>Preview PDF</span>
 										</a>
 										<a
+											aria-label='Resume download'
 											href='/resume.pdf'
 											download='Eman_Soliman_CV.pdf'
 											onClick={() => setSheetOpen(false)}

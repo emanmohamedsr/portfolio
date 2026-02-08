@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 
 const SocialButton = ({ href, icon, label, colorClass }: any) => (
 	<a
+		aria-label={label}
 		href={href}
 		target='_blank'
 		rel='noopener noreferrer'

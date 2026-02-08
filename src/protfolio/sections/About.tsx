@@ -92,7 +92,7 @@ const AboutSection = () => {
 											loading='lazy'
 											className='absolute inset-0 h-full w-full object-contain p-4'
 											alt='Eman Soliman Logo'
-											src='/logo.png'
+											src='/logo.webp'
 											style={{
 												filter:
 													"drop-shadow(0px 0px 10px rgba(34, 211, 238, 0.3))",

@@ -26,7 +26,11 @@ const ExperienceCard = ({
 			{/* Header: Logo & Titles */}
 			<div className='flex flex-col sm:flex-row items-start gap-4'>
 				{logo && (
-					<a href={certificateUrl} target='_blank' rel='noopener noreferrer'>
+					<a
+						href={certificateUrl}
+						target='_blank'
+						rel='noopener noreferrer'
+						aria-label='Certification preview'>
 						<div className='w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-lg bg-white/5 p-2 border border-white/10 flex items-center justify-center overflow-hidden'>
 							<img
 								src={logo}
