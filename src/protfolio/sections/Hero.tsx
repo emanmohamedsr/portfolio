@@ -36,7 +36,7 @@ export default function Hero() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ delay: 1.5, duration: 1 }}
-						className='mt-16 sm:mt-20'>
+						className='hidden md:block mt-16 sm:mt-20'>
 						<a
 							href='#about'
 							aria-label='Scroll down'
