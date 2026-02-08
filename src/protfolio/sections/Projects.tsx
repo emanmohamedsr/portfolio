@@ -103,6 +103,7 @@ const ProjectsSection = () => {
 									{/* Desktop Actions */}
 									<div className='hidden md:flex gap-2'>
 										<a
+											aria-label='Project live demo'
 											href={active.demoUrl}
 											target='_blank'
 											rel='noreferrer'
@@ -110,6 +111,7 @@ const ProjectsSection = () => {
 											<ExternalLink size={16} /> Live Demo
 										</a>
 										<a
+											aria-label='View project code on GitHub'
 											href={active.repoUrl}
 											target='_blank'
 											rel='noreferrer'
@@ -144,12 +146,14 @@ const ProjectsSection = () => {
 									{/* Mobile Actions Footer */}
 									<div className='flex md:hidden gap-4 mt-auto'>
 										<a
+											aria-label='Project live demo'
 											href={active.demoUrl}
 											target='_blank'
 											className='flex-1 bg-cyan-500 text-slate-900 py-3 rounded-xl text-center font-bold text-sm flex items-center justify-center gap-2'>
 											<ExternalLink size={16} /> Live Demo
 										</a>
 										<a
+											aria-label='View project code on GitHub'
 											href={active.repoUrl}
 											target='_blank'
 											className='flex-1 bg-slate-800 text-white py-3 rounded-xl text-center font-bold text-sm border border-white/10 flex items-center justify-center gap-2'>
