@@ -10,15 +10,15 @@ export default function Hero() {
 					initial={{ opacity: 0.5, y: 100 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{
-						delay: 0.3,
-						duration: 0.8,
+						delay: 0.1,
+						duration: 0.6,
 						ease: "easeInOut",
 					}}
 					className='flex flex-col items-center'>
 					<h1
 						className='font-script pt-20 md:pt-0 mt-20 md:mt-0 bg-linear-to-br from-white to-cyan-400 bg-clip-text text-transparent text-center font-bold tracking-tight 
             text-[clamp(2.5rem,6vw,4.5rem)] leading-tight'>
-						Building Exceptional <br /> Digital Experiences
+						Building Intuitive <br /> Digital Experiences
 					</h1>
 					<p
 						className='mt-4 font-normal text-slate-300 max-w-lg mx-auto text-center
@@ -28,8 +28,8 @@ export default function Hero() {
 							{" "}
 							Eman Soliman
 						</span>
-						. A Frontend Engineer <br /> focused on creating intuitive web
-						applications using React and Next.js.
+						. A Front-End Developer <br /> building responsive, accessible web
+						applications with React, Next.js, TypeScript, and AI workflows.
 					</p>
 
 					<motion.div

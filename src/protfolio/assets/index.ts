@@ -6,6 +6,7 @@ import ma7al from "./images/ma7al.webp";
 import vscode from "./images/vscode.webp";
 import gamehub from "./images/gamehub.webp";
 import htmlDashboard from "./images/htmldashboard.webp";
+import sprintifai from "./images/sprintifai.webp";
 import university from "./images/university.webp";
 import logocard from "./images/logocard.webp";
 
@@ -18,6 +19,7 @@ export const images = {
 	vscode,
 	gamehub,
 	htmlDashboard,
+	sprintifai,
 	university,
 	logocard,
 };

@@ -2,24 +2,24 @@ import { images } from "../assets";
 import ExperienceCard from "../components/ExperienceCard";
 
 export default [
-	// 1. ITI Experience
+	// 1. GDG Experience
 	{
-		title: "Summer 2024",
+		title: "Dec 2024 - Sep 2025",
 		content: (
 			<ExperienceCard
-				role='Frontend Developer Trainee'
-				company='Information Technology Institute (ITI)'
-				date='Jul 2024 - Sep 2024. 3 mos'
-				location='El Mansoura, Egypt'
-				type='Internship (Remote)'
-				logo={images.iti}
+				role='Front-End Developer, Core Team Member'
+				company='GDG On-Campus Zagazig'
+				date='Dec 2024 - Sep 2025. 10 mos'
+				location='Zagazig, Egypt'
+				type='Volunteering (Hybrid)'
+				logo={images.gdg}
 				description={[
-					"Completed an intensive 150-hour training program focused on modern web development.",
-					"Developed responsive web applications using React.js and Tailwind CSS.",
-					"Implemented clean code practices and reusable components architecture.",
+					"Mentored 20+ students on modern web development practices, focusing on frontend fundamentals, resulting in an accelerated learning curve and the successful deployment of multiple student projects.",
+					"Organized and led 5+ technical workshops and events to strengthen the local developer community's frontend engineering skills.",
+					"Shipped community web solutions with the core team, working through weekly code reviews and pair-programming sessions to keep quality consistent across tasks.",
 				]}
-				skills={["React.js", "Bootstrap", "JavaScript"]}
-				certificateUrl='https://drive.google.com/file/d/1OPQnPg7RaLkpcu6m_YTQguo3RAncQT8s/view'
+				skills={["Mentoring", "Cross-functional Collaboration", "Event Planning"]}
+				certificateUrl='https://drive.google.com/file/d/12YFLNJdjH5WxXFLVSMjXINaiQGSHDdaL/view'
 			/>
 		),
 	},
@@ -28,40 +28,37 @@ export default [
 		title: "Feb 2025 - Apr 2025",
 		content: (
 			<ExperienceCard
-				role='Problem Solving Trainee'
-				company='ICPC Zagazig Community'
+				role='Competitive Programming Trainee'
+				company='ICPC'
 				date='Feb 2025 - Apr 2025. 3 mos'
 				location='Zagazig, Egypt'
 				type='Training'
 				logo={images.icpc}
 				description={[
-					"Ranked among the Top 10 Trainees in the community.",
-					"Solved complex algorithmic problems using C++ and Data Structures.",
-					"Participated in competitive programming contests under time pressure.",
+					"Ranked Top 10 trainee (2,321 points) by solving 139 algorithmic challenges in C++, applying advanced Data Structures and Algorithms to optimize time and space complexity.",
 				]}
 				skills={["C++", "Algorithms", "Data Structures", "Problem Solving"]}
 				certificateUrl='https://icpczagazig.org/certificate/67f0ab5418de8fbbff95f070'
 			/>
 		),
 	},
-	// 3. GDG Experience
+	// 3. ITI Experience
 	{
-		title: "Dec 2024 - Sep 2025",
+		title: "Jul 2024 - Sep 2024",
 		content: (
 			<ExperienceCard
-				role='Core Team Member (Frontend)'
-				company='GDG on Campus Zagazig'
-				date='Dec 2024 - Sep 2025. 10 mos'
-				location='Zagazig, Egypt'
-				type='Volunteering (Hybrid)'
-				logo={images.gdg}
+				role='Front-End Developer Intern'
+				company='Information Technology Institute (ITI)'
+				date='Jul 2024 - Sep 2024. 3 mos'
+				location='El Mansoura, Egypt'
+				type='Internship (Remote)'
+				logo={images.iti}
 				description={[
-					"Selected as a Core Member for the 2024-2025 season.",
-					"Organizing technical workshops and mentoring students in Frontend technologies.",
-					"Collaborating with the team to facilitate hands-on labs and sessions.",
+					"Completed 150 hours of intensive hands-on frontend engineering training, mastering React hooks, component lifecycles, and API integrations.",
+					"Delivered 10+ practical tasks and one full-stack graduation project with a cross-functional team, successfully meeting strict industry-standard UI/UX requirements and project deadlines.",
 				]}
-				skills={["Leadership", "Mentoring", "Event Planning"]}
-				certificateUrl='https://drive.google.com/file/d/12YFLNJdjH5WxXFLVSMjXINaiQGSHDdaL/view'
+				skills={["React.js", "TypeScript", "JavaScript (ES6+)"]}
+				certificateUrl='https://drive.google.com/file/d/1OPQnPg7RaLkpcu6m_YTQguo3RAncQT8s/view'
 			/>
 		),
 	},

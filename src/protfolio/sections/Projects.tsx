@@ -78,6 +78,9 @@ const ProjectsSection = () => {
 								<img
 									src={active.src}
 									alt={active.title}
+									decoding='async'
+									width={active.width}
+									height={active.height}
 									className='w-full h-full object-cover'
 								/>
 								<div className='absolute inset-0 bg-linear-to-t from-slate-900 via-transparent to-transparent opacity-60' />
@@ -193,6 +196,10 @@ const ProjectsSection = () => {
 										<img
 											src={project.src}
 											alt={project.title}
+											loading='lazy'
+											decoding='async'
+											width={project.width}
+											height={project.height}
 											className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-500'
 										/>
 										<div className='absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors' />

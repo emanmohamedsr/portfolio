@@ -99,6 +99,8 @@ export const Navbar = () => {
 					<img
 						src='/logo.webp'
 						alt='Logo'
+						width='100'
+						height='88'
 						className='w-10 h-10 xs:w-12 xs:h-12 md:w-18 md:h-18 object-contain'
 					/>
 				</a>
@@ -149,6 +151,8 @@ export const Navbar = () => {
 									<img
 										src='/logo.webp'
 										alt='Logo'
+										width='100'
+										height='88'
 										className='w-8 h-8 object-contain'
 									/>
 								</SheetTitle>

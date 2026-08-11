@@ -6,7 +6,7 @@ import {
 	SheetHeader,
 	SheetTitle,
 } from "@/components/ui/sheet";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Preloader() {
 	const [isOpen, setIsOpen] = useState(true);
@@ -18,6 +18,11 @@ export default function Preloader() {
 	};
 
 	const handleVideoEnd = () => setTimeout(handleClose, 500);
+
+	useEffect(() => {
+		const safetyTimer = setTimeout(handleClose, 1500);
+		return () => clearTimeout(safetyTimer);
+	}, []);
 
 	if (!isMounted) return null;
 

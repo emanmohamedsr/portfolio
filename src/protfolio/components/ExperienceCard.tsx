@@ -34,6 +34,10 @@ const ExperienceCard = ({
 						<div className='w-12 h-12 md:w-16 md:h-16 shrink-0 rounded-lg bg-white/5 p-2 border border-white/10 flex items-center justify-center overflow-hidden'>
 							<img
 								src={logo}
+								loading='lazy'
+								decoding='async'
+								width='200'
+								height='200'
 								alt={company}
 								className='w-full h-full object-contain'
 							/>
