@@ -40,27 +40,27 @@ const AboutSection = () => {
 
 						<p className='text-slate-300 text-lg leading-relaxed'>
 							I'm <span className='text-white font-medium'>Eman Soliman</span>,
-							a passionate Frontend Engineer. My journey involves translating
-							creative designs into interactive, high-performance web
-							applications.
+							a Front-End Developer specializing in React, Next.js, and
+							TypeScript. I turn designs into responsive, accessible web
+							applications that feel fast and polished.
 						</p>
 
 						<p className='text-slate-400 text-base leading-relaxed'>
-							Specializing in <span className='text-cyan-400'>React</span> and{" "}
-							<span className='text-cyan-400'>Next.js</span>, I focus on
-							building intuitive user interfaces that not only look good but
-							feel amazing to use. I believe in clean code, accessibility, and
-							the magic of small details.
+							Beyond <span className='text-cyan-400'>React</span> and{" "}
+							<span className='text-cyan-400'>Next.js</span>, I work with
+							modern state management and Generative AI workflows like the
+							Vercel AI SDK and MCP. I care about clean code, accessibility,
+							and the small details that make an interface feel right.
 						</p>
 
 						<div className='flex justify-center md:justify-start gap-8 pt-4'>
 							<div>
-								<p className='text-2xl font-bold text-white'>2+</p>
-								<p className='text-sm text-slate-500'>Years Exp.</p>
+								<p className='text-2xl font-bold text-white'>150+</p>
+								<p className='text-sm text-slate-500'>Training Hours</p>
 							</div>
 							<div>
-								<h4 className='text-2xl font-bold text-white'>10+</h4>
-								<p className='text-sm text-slate-500'>Projects</p>
+								<h4 className='text-2xl font-bold text-white'>20+</h4>
+								<p className='text-sm text-slate-500'>Students Mentored</p>
 							</div>
 						</div>
 					</motion.div>
@@ -91,6 +91,9 @@ const AboutSection = () => {
 									<div className='relative aspect-3/4 w-full bg-linear-to-br from-slate-800 to-black'>
 										<img
 											loading='lazy'
+											decoding='async'
+											width='451'
+											height='397'
 											className='absolute inset-0 h-full w-full object-contain p-4'
 											alt='Eman Soliman Logo'
 											src={images.logocard}
@@ -108,7 +111,7 @@ const AboutSection = () => {
 											Eman Soliman
 										</span>
 										<span className='text-[10px] text-cyan-400 uppercase tracking-widest'>
-											Frontend Dev
+											Front-End Dev
 										</span>
 									</div>
 									<div className='h-8 w-8 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/30'>

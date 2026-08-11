@@ -1,6 +1,19 @@
 import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
 
-const SocialButton = ({ href, icon, label, colorClass }: any) => (
+interface SocialButtonProps {
+	href: string;
+	icon: ReactNode;
+	label: string;
+	colorClass?: string;
+}
+
+const SocialButton = ({
+	href,
+	icon,
+	label,
+	colorClass,
+}: SocialButtonProps) => (
 	<a
 		aria-label={label}
 		href={href}

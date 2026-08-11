@@ -9,7 +9,7 @@ const ContactSection = () => {
 	const [copied, setCopied] = useState(false);
 
 	const handleCopy = () => {
-		navigator.clipboard.writeText("emanmohamedsr72@gmail.com");
+		navigator.clipboard.writeText("eman.soliman.dev@gmail.com");
 		setCopied(true);
 		setTimeout(() => setCopied(false), 2000);
 	};
@@ -41,9 +41,9 @@ const ContactSection = () => {
 								</div>
 								<span className='text-slate-300 text-sm font-mono group-hover/email:text-white transition-colors'>
 									<span className='hidden sm:block'>
-										emanmohamedsr72@gmail.com
+										eman.soliman.dev@gmail.com
 									</span>
-									<span className='block sm:hidden'>emanmohamedsr72@...</span>
+									<span className='block sm:hidden'>eman.soliman.dev@...</span>
 								</span>
 							</div>
 

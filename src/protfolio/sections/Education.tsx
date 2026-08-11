@@ -28,6 +28,10 @@ const Education = () => {
 						<div className='w-16 h-16 rounded-2xl bg-slate-800 border border-white/10 flex items-center justify-center shrink-0'>
 							<img
 								src={images.university}
+								loading='lazy'
+								decoding='async'
+								width='200'
+								height='200'
 								className='w-full h-auto object-contain'
 								alt='Zagazig University'
 							/>
@@ -37,11 +41,11 @@ const Education = () => {
 						<div className='flex-1'>
 							<div className='flex flex-col md:flex-row md:items-center justify-between mb-2'>
 								<h3 className='text-2xl font-bold text-white'>
-									Bachelor of Computer Science
+									Bachelor of Computer Science with Honors
 								</h3>
 								<span className='inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-medium mt-2 md:mt-0 w-fit'>
 									<Calendar size={14} />
-									2022 - 2026 (Expected)
+									Sep 2022 - Jul 2026
 								</span>
 							</div>
 
@@ -61,7 +65,7 @@ const Education = () => {
 											GPA Score
 										</p>
 										<p className='text-white font-mono font-bold'>
-											3.82{" "}
+											3.87 / 4.0{" "}
 											<span className='text-xs text-slate-400 font-normal'>
 												(Excellent)
 											</span>
@@ -92,14 +96,10 @@ const Education = () => {
 								</p>
 								<div className='flex flex-wrap gap-2'>
 									{[
+										"C++",
+										"OOP",
 										"Data Structures",
 										"Algorithms",
-										"OOP",
-										"Software Engineering",
-										"Database Systems",
-										"Operating Systems",
-										"Image Processing",
-										"Embedded Systems",
 									].map((course, index) => (
 										<span
 											key={index}
