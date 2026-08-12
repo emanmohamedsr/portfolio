@@ -32,7 +32,6 @@ export default [
 		icon: <Terminal className='w-6 h-6 text-green-400' />,
 		skills: [
 			"Vercel AI SDK",
-			"MCP",
 			"dnd-kit",
 			"Leaflet",
 			"React Hook Form",
