@@ -8,14 +8,21 @@ export default [
 		description:
 			"An AI-powered productivity workspace for smart calendar and task management.",
 		longDescription:
-			"Engineered a standardized data synchronization layer using Model Context Protocol (MCP) to optimize bi-directional Google Calendar integration. Developed a dynamic Calendar module capable of rendering 50+ concurrent task events seamlessly through optimized memoization. Implemented a robust client-side Notification system utilizing Zustand, offloading scheduling logic to ensure highly reliable user reminder delivery. Designed a modular dashboard architecture that maximized UI space efficiency, enabling seamless interaction between AI-generated insights and task management.",
+			"Built a fully dynamic and interactive Calendar UI module from scratch (FullCalendar), rendering calendar events and user reminders in a unified, responsive dashboard view. Consumed backend REST APIs to fetch, create, and display calendar events and reminders, managing complex client-side state, async data fetching, and loading/error states with TanStack Query (React Query) and Zustand. Collaborated in a cross-functional team as the dedicated Front-End Developer on the calendar dashboard, keeping the UI responsive and accessible as AI-generated tasks and insights streamed in.",
 		src: images.sprintifai,
 		width: 1906,
 		height: 939,
 		icon: <Layout className='text-purple-400' size={24} />,
 		repoUrl: "https://github.com/XCloud69",
 		demoUrl: "https://x-cloud-frontend-2wj3.vercel.app/",
-		stack: ["React 19", "TypeScript", "MCP", "Zustand"],
+		stack: [
+			"React 19",
+			"TypeScript",
+			"Zustand",
+			"TanStack Query",
+			"REST APIs",
+			"FullCalendar",
+		],
 	},
 	{
 		title: "Axon",

@@ -46,11 +46,11 @@ const AboutSection = () => {
 						</p>
 
 						<p className='text-slate-400 text-base leading-relaxed'>
-							Beyond <span className='text-cyan-400'>React</span> and{" "}
-							<span className='text-cyan-400'>Next.js</span>, I work with
-							modern state management and Generative AI workflows like the
-							Vercel AI SDK and MCP. I care about clean code, accessibility,
-							and the small details that make an interface feel right.
+						Beyond <span className='text-cyan-400'>React</span> and{" "}
+						<span className='text-cyan-400'>Next.js</span>, I work with
+						modern state management and Generative AI workflows with the
+						Vercel AI SDK. I care about clean code, accessibility,
+						and the small details that make an interface feel right.
 						</p>
 
 						<div className='flex justify-center md:justify-start gap-8 pt-4'>
