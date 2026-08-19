@@ -6,9 +6,9 @@ export default [
 		title: "SprintifAI",
 		subtitle: "AI-Powered Productivity Workspace",
 		description:
-			"An AI-powered productivity workspace for smart calendar and task management.",
+			"A unified AI workspace integrating email, video conferencing, document search, and smart scheduling.",
 		longDescription:
-			"Built a fully dynamic and interactive Calendar UI module from scratch (FullCalendar), rendering calendar events and user reminders in a unified, responsive dashboard view. Consumed backend REST APIs to fetch, create, and display calendar events and reminders, managing complex client-side state, async data fetching, and loading/error states with TanStack Query (React Query) and Zustand. Collaborated in a cross-functional team as the dedicated Front-End Developer on the calendar dashboard, keeping the UI responsive and accessible as AI-generated tasks and insights streamed in.",
+			"Collaborated in a cross-functional team to build a unified AI workspace integrating email, video conferencing, document search, and smart scheduling. Architected the Calendar module from scratch, implementing bidirectional Google Calendar sync, drag-and-drop scheduling, and full Arabic RTL support. Built complex event forms (React Hook Form, Zod) and managed real-time reminders and optimistic UI updates using Zustand and TanStack Query.",
 		src: images.sprintifai,
 		width: 1906,
 		height: 939,
@@ -20,8 +20,8 @@ export default [
 			"TypeScript",
 			"Zustand",
 			"TanStack Query",
-			"REST APIs",
-			"FullCalendar",
+			"React Hook Form",
+			"Zod",
 		],
 	},
 	{
@@ -49,6 +49,28 @@ export default [
 		],
 	},
 	{
+		title: "Game Hub",
+		subtitle: "Video Game Discovery App",
+		description:
+			"A responsive game discovery platform with real-time search and filtering.",
+		longDescription:
+			"A feature-rich application fetching data from the RAWG API. It implements advanced caching and state management using TanStack Query and Zustand. Features include game filtering by genre/platform, sorting, and infinite scrolling for a seamless user experience.",
+		src: images.gamehub,
+		width: 600,
+		height: 281,
+		icon: <Gamepad2 className='text-yellow-400' size={24} />,
+		repoUrl: "https://github.com/emanmohamedsr/game-hub",
+		demoUrl: "https://game-hub-two-sandy.vercel.app/",
+		stack: [
+			"React 19",
+			"TypeScript",
+			"React Query",
+			"Zustand",
+			"Chakra UI",
+			"Axios",
+		],
+	},
+	{
 		title: "Ma7al",
 		subtitle: "Full Stack E-commerce",
 		description:
@@ -70,28 +92,6 @@ export default [
 			"Chakra UI",
 			"React Hook Form",
 			"JWT",
-		],
-	},
-	{
-		title: "Game Hub",
-		subtitle: "Video Game Discovery App",
-		description:
-			"A responsive game discovery platform with real-time search and filtering.",
-		longDescription:
-			"A feature-rich application fetching data from the RAWG API. It implements advanced caching and state management using TanStack Query and Zustand. Features include game filtering by genre/platform, sorting, and infinite scrolling for a seamless user experience.",
-		src: images.gamehub,
-		width: 600,
-		height: 281,
-		icon: <Gamepad2 className='text-yellow-400' size={24} />,
-		repoUrl: "https://github.com/emanmohamedsr/game-hub",
-		demoUrl: "https://game-hub-two-sandy.vercel.app/",
-		stack: [
-			"React 19",
-			"TypeScript",
-			"React Query",
-			"Zustand",
-			"Chakra UI",
-			"Axios",
 		],
 	},
 	{
